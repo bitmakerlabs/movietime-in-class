@@ -1,0 +1,21 @@
+<% if @movie.errors.any? %>
+  <%= @movie.errors.inspect %>
+<% end %>
+
+<%= form_for @movie do |f| %>
+
+<p>
+  Title:<br/>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  Year:<br/>
+  <%= f.text_field :year %>
+</p>
+
+<p>
+  <%= f.submit "Save" %>
+</p>
+
+<% end %>
