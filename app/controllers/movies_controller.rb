@@ -23,4 +23,25 @@ class MoviesController < ApplicationController
     end
   end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.title = params[:movie][:title]
+    @movie.year = params[:movie][:year]
+    if @movie.save
+      redirect_to "/movies"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to root_path
+  end
+
 end
