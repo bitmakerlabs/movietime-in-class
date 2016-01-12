@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Genre.create(name: "Action")
+# Genre.create(name: "Sci Fi")
+#
+# (1..50).each do |index|
+#   Movie.create(title: Faker::Company.name, genre_id: 1, year: Faker::Number.between(1940, 2015))
+# end
+#
+# (1..50).each do |index|
+#   Movie.create(title: Faker::Company.name, genre_id: 2, year: Faker::Number.between(1940, 2015))
+# end

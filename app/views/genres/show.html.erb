@@ -1,0 +1,11 @@
+<h1><%= @genre.name %></h1>
+<h3>Movies:</h3>
+<% if @genre.movies.count > 0 %>
+  <% @genre.movies.each do |movie| %>
+    <p><a href="/movies/<%= movie.id %>"><%= movie.title %></a></p>
+  <% end %>
+<% else %>
+  <p><em>No movies exist for this genre</em></p>
+<% end %>
+
+<p><a href="/movies/new">Create New Movie</a></p>

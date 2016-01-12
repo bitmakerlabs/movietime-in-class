@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new
     @movie.title = params[:movie][:title]
     @movie.year = params[:movie][:year]
+    @movie.genre_id = params[:movie][:genre_id]
     if @movie.save
       redirect_to "/movies"
     else
@@ -31,6 +32,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.title = params[:movie][:title]
     @movie.year = params[:movie][:year]
+    @movie.genre_id = params[:movie][:genre_id]        
     if @movie.save
       redirect_to "/movies"
     else

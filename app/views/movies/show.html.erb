@@ -3,7 +3,7 @@
 <p>Year of release: <%= @movie.year %></p>
 
 <p>
-  <%= link_to "Back to Movie List", movies_path %> |
+  <%= link_to "Back to Genre", genre_path(@movie.genre) %> |
   <%= link_to "Edit Movie", edit_movie_path(@movie) %> |
   <%= link_to "Delete Movie", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>
 </p>

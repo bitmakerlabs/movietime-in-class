@@ -1,5 +1,7 @@
 <% if @movie.errors.any? %>
-  <%= @movie.errors.inspect %>
+  <% @movie.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
 <% end %>
 
 <%= form_for @movie do |f| %>
@@ -12,10 +14,14 @@
     <%= f.text_field :year %>
   </p>
   <p>
+    Genre Id:<br/>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {prompt: "Please select genre"}) %>
+  </p>
+  <p>
     <%= f.submit "Save" %>
   </p>
 <% end %>
 
 <p>
-  <%= link_to "Back to Movie List", movies_path %>
+  <%= link_to "Back to Genres", genres_path %>
 </p>
