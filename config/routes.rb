@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :movies
   resources :genres
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   # get '/movies' => 'movies#index'
   # get '/movies/:blah' => 'movies#show'
 
